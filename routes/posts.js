@@ -9,6 +9,7 @@ const authMiddleware = require('../middleware/auth');
 // Get all posts
 router.get('/', async (req, res) => {
   try {
+    console.log("DEBUG : HIT")
     const posts = await Post.find().sort({ createdAt: -1 });
     res.json(posts);
   } catch (error) {
